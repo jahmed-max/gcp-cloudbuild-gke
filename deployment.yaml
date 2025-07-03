@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gcp-devops-gke
-          image: gcr.io/gcp-devops-project-421008/gcpdevops:latest
+          image: gcr.io/canvas-modem-457011-p6/gcpdevops:latest
           ports:
             - containerPort: 3000
           env:
