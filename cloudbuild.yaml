@@ -1,10 +1,10 @@
 steps:
   # build the container image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/canvas-modem-457011-p6/gcpdevops", "."]
+    args: ["build", "-t", "gcr.io/intense-music-467407-q8/gcpdevops", "."]
     # push container image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/canvas-modem-457011-p6/gcpdevops"]
+    args: ["push", "gcr.io/intense-music-467407-q8/gcpdevops"]
     # create a gke cluster named gcp-devops-project
     - name: 'gcr.io/cloud-builders/gcloud'
   args:
@@ -12,7 +12,7 @@ steps:
       'container', 'clusters', 'create', 'gcp-devops-cluster',
       '--zone', 'us-central1-c',
       '--num-nodes', '1',
-      '--project', 'canvas-modem-457011-p6'
+      '--project', 'intense-music-467407-q8'
     ]
 
     
@@ -21,7 +21,7 @@ steps:
     args:
       - run
       - --filename=deployment.yaml
-      - --image=gcr.io/canvas-modem-457011-p6/gcpdevops
+      - --image=gcr.io/intense-music-467407-q8/gcpdevops
       - --location=us-central1-c
       - --cluster=gcp-devops-cluster
       - --namespace=gcp-devops-prod
