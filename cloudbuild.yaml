@@ -7,8 +7,7 @@ steps:
     args: ["push", "gcr.io/intense-music-467407-q8/gcpdevops"]
     # create a gke cluster named gcp-devops-project
   - name: 'gcr.io/cloud-builders/gcloud'
-    args:
-    [
+    args: [
       'container', 'clusters', 'create', 'gcp-devops-cluster',
       '--zone', 'us-central1-c',
       '--num-nodes', '1',
